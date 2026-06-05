@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Intervista Finale</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="flow.js"></script>
+    <style>
+        .scenario-box {
+            background: #333; padding: 15px; margin-bottom: 20px; 
+            border-radius: 8px; border: 1px solid #444;
+        }
+        .scenario-header {
+            font-weight: bold; color: #88C0D0; font-size: 1.1rem;
+            margin-bottom: 10px; border-bottom: 1px solid #555; padding-bottom: 5px;
+        }
+        .questions-row {
+            display: flex; justify-content: space-between; gap: 15px;
+        }
+        .q-item {
+            flex: 1; display: flex; flex-direction: column;
+        }
+        .q-item label {
+            font-size: 0.9rem; color: #ccc; margin-bottom: 5px;
+        }
+        .scenario-input { 
+            width: 100%; padding: 10px; text-align: center; 
+            font-size: 1.1rem; font-weight: bold;
+            background: #222; border: 1px solid #555; color: white; border-radius: 4px;
+        }
+        .scenario-input:focus { border-color: #EBCB8B; outline: none; }
+    </style>
+</head>
+<body>
+    <h1>Intervista Finale</h1>
+    <p style="text-align:center; color:#aaa">Domande conclusive sull'esperienza.</p>
+
+    <form id="interviewForm">
+        
+        <div class="section-title">Esperienza Generale</div>
+
+        <label>1. Come ti senti adesso che è terminato l'esperimento?</label>
+        <textarea id="q1"></textarea>
+
+        <label>2. Ti senti affaticato/a? Se sì, da cosa?</label>
+        <textarea id="q2"></textarea>
+
+        <label>3. Hai notato differenze tra le due fasi? Se sì, quali?</label>
+        <textarea id="q3"></textarea>
+
+        <label>4. (Solo se pertinente) Perché dici che la luce era diversa?</label>
+        <textarea id="q4"></textarea>
+
+        <label>5. Hai avuto fastidi oculari? (Quando e di che tipo?)</label>
+        <textarea id="q5"></textarea>
+
+        <label>6. Hai avuto altre difficoltà durante l'esperimento?</label>
+        <textarea id="q6"></textarea>
+
+        <label>7. Condizioni fisiche pre-esperimento (Caffeina/Stimolanti)?</label>
+        <textarea id="q7"></textarea>
+
+        <label>8. Che tempo c'è oggi?</label>
+        <textarea id="q8"></textarea>
+
+        <div class="section-title" style="margin-top:40px;">Valutazione Scenari Luce</div>
+        <p style="margin-bottom:20px; color:#ccc;">Per ogni scenario, rispondi alle due domande con un voto da <strong>1 a 100</strong>.</p>
+
+        <div class="scenario-box">
+            <div class="scenario-header">Abbagliamento</div>
+            <div class="questions-row">
+                <div class="q-item">
+                    <label>Welt </label>
+                    <input type="number" id="abbagliamento_welt" class="scenario-input" min="1" max="100" placeholder="Voto">
+                </div>
+                <div class="q-item">
+                    <label>Vitasolis </label>
+                    <input type="number" id="abbagliamento_vitasolis" class="scenario-input" min="1" max="100" placeholder="Voto">
+                </div>
+            </div>
+            <div class="q-item">
+                <label>Note? </label>
+                <textarea id="abbagliamento_notes"></textarea>
+            </div>
+        </div>
+        <div class="scenario-box">
+
+            <div class="scenario-header">Scenario 1</div>
+            <div class="questions-row">
+                <div class="q-item">
+                    <label>Quanto ti piace il setup? </label>
+                    <input type="number" id="scen_1_q1" class="scenario-input" min="1" max="100" placeholder="Voto">
+                </div>
+                <div class="q-item">
+                    <label>Quanto è adatto a svolgere attività? </label>
+                    <input type="number" id="scen_1_q2" class="scenario-input" min="1" max="100" placeholder="Voto">
+                </div>
+            </div>
+
+            <div class="q-item">
+                <label>Note sul setup? </label>
+                <textarea id="scen_1_notes"></textarea>
+            </div>
+        </div>
+
+        <div class="scenario-box">
+            <div class="scenario-header">Scenario 2</div>
+            <div class="questions-row">
+                <div class="q-item">
+                    <label>Quanto ti piace il setup? </label>
+                    <input type="number" id="scen_2_q1" class="scenario-input" min="1" max="100" placeholder="Voto">
+                </div>
+                <div class="q-item">
+                    <label>Quanto è adatto a svolgere attività? </label>
+                    <input type="number" id="scen_2_q2" class="scenario-input" min="1" max="100" placeholder="Voto">
+                </div>
+            </div>
+            <div class="q-item">
+                <label>Note sul setup? </label>
+                <textarea id="scen_2_notes"></textarea>
+            </div>
+        </div>
+
+        <div class="scenario-box">
+            <div class="scenario-header">Scenario 3</div>
+            <div class="questions-row">
+                <div class="q-item">
+                    <label>Quanto ti piace il setup? </label>
+                    <input type="number" id="scen_3_q1" class="scenario-input" min="1" max="100" placeholder="Voto">
+                </div>
+                <div class="q-item">
+                    <label>Quanto è adatto per svolgere attività? </label>
+                    <input type="number" id="scen_3_q2" class="scenario-input" min="1" max="100" placeholder="Voto">
+                </div>
+            </div>
+
+            <div class="q-item">
+                <label>Note sul setup? </label>
+                <textarea id="scen_3_notes"></textarea>
+            </div>
+        </div>
+
+        <div class="scenario-box">
+            <div class="scenario-header">Scenario 4</div>
+            <div class="questions-row">
+                <div class="q-item">
+                    <label>Quanto ti piace il setup? </label>
+                    <input type="number" id="scen_4_q1" class="scenario-input" min="1" max="100" placeholder="Voto">
+                </div>
+                <div class="q-item">
+                    <label>Quanto è adatto per svolgere attività? </label>
+                    <input type="number" id="scen_4_q2" class="scenario-input" min="1" max="100" placeholder="Voto">
+                </div>
+            </div>
+            <div class="q-item">
+                <label>Note sul setup? </label>
+                <textarea id="scen_4_notes"></textarea>
+            </div>
+        </div>
+
+        <div class="scenario-box">
+            <div class="scenario-header">Scenario 5</div>
+            <div class="questions-row">
+                <div class="q-item">
+                    <label>Quanto ti piace il setup? </label>
+                    <input type="number" id="scen_5_q1" class="scenario-input" min="1" max="100" placeholder="Voto">
+                </div>
+                <div class="q-item">
+                    <label>Quanto è adatto per svolgere attività? </label>
+                    <input type="number" id="scen_5_q2" class="scenario-input" min="1" max="100" placeholder="Voto">
+                </div>
+            </div>
+            <div class="q-item">
+                <label>Note sul setup? </label>
+                <textarea id="scen_5_notes"></textarea>
+            </div>
+        </div>
+
+        <button type="button" onclick="saveInterview()" style="margin-top:30px; background-color:#5E81AC;">SALVA E PROSEGUI AL MUNSELL</button>
+    </form>
+
+    <script>
+        function saveInterview() {
+            const data = {
+                Q1_Feeling: document.getElementById('q1').value || "",
+                Q2_Fatigue: document.getElementById('q2').value || "",
+                Q3_Diffs: document.getElementById('q3').value || "",
+                Q4_Light: document.getElementById('q4').value || "",
+                Q5_Eyes: document.getElementById('q5').value || "",
+                Q6_Other: document.getElementById('q6').value || "",
+                Q7_Coffee: document.getElementById('q7').value || "",
+                Q8_Weather: document.getElementById('q8').value || "",
+
+                abbagliamento_Welt: document.getElementById('abbagliamento_welt').value || "",
+                abbagliamento_Vitasolis: document.getElementById('abbagliamento_vitasolis').value || "",
+                abbagliamento_Notes: document.getElementById('abbagliamento_notes').value || "",
+                
+                Scen1_Q1: document.getElementById('scen_1_q1').value || "",
+                Scen1_Q2: document.getElementById('scen_1_q2').value || "",
+                Scen1_Notes: document.getElementById('scen_1_notes').value || "",
+                
+                Scen2_Q1: document.getElementById('scen_2_q1').value || "",
+                Scen2_Q2: document.getElementById('scen_2_q2').value || "",
+                Scen2_Notes: document.getElementById('scen_2_notes').value || "",
+
+                Scen3_Q1: document.getElementById('scen_3_q1').value || "",
+                Scen3_Q2: document.getElementById('scen_3_q2').value || "",
+                Scen3_Notes: document.getElementById('scen_3_notes').value || "",
+
+                Scen4_Q1: document.getElementById('scen_4_q1').value || "",
+                Scen4_Q2: document.getElementById('scen_4_q2').value || "",
+                Scen4_Notes: document.getElementById('scen_4_notes').value || "",
+
+                Scen5_Q1: document.getElementById('scen_5_q1').value || "",
+                Scen5_Q2: document.getElementById('scen_5_q2').value || "",
+                Scen5_Notes: document.getElementById('scen_5_notes').value || ""
+            };
+
+            localStorage.setItem('INTERVISTA_FINALE', JSON.stringify(data));
+            nextStep();
+        }
+    </script>
+</body>
+</html>
